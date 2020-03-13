@@ -27,7 +27,7 @@ def proof_of_work(last_proof):
     proof = 0
     last_hash = sha256(str(last_proof).encode()).hexdigest()
     while valid_proof(last_hash, proof) is False:
-        proof = random() + random() - random() + getrandbits()
+        proof = random() + random() - random() + float(getrandbits())
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
