@@ -25,7 +25,7 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
     while valid_proof(last_proof, proof) is False:
-        proof = random.getrandbits(32)
+        proof = random.random()  # random.getrandbits(32)
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
